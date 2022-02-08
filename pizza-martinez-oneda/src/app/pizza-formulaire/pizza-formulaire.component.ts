@@ -16,27 +16,24 @@ export class PizzaFormulaireComponent implements OnInit {
   }
 }
 
-export class Pizza {
-  creme : boolean;
-  tomate:boolean;
+class Pizza {
+  sauce : string;
   miel: boolean;
   jambon: boolean;
   anchois: boolean;
   magret: boolean;
-
   
   constructor() {
-      this.tomate = true;
-      this.creme = false;
+      this.sauce = "tomate";
       this.miel = false;
       this.jambon = false; 
       this.anchois = false;
       this.magret = false;
   }
-  public prix():number {
-       let prix = 8;
-       if(this.tomate) { prix+=3; }
-       if(this.creme) { prix+=4; }
+  public getprix():number {
+      let prix = 0;
+       if(this.sauce == "tomate") { prix+=3; }
+       if(this.sauce == "creme") { prix+=4; }
        if(this.miel) { prix+=2; }
        if(this.jambon) { prix+=3; }
        if(this.anchois) { prix+=1; }

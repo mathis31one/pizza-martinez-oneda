@@ -1,13 +1,13 @@
 <form>
-    Base tomate <input type="radio" name="sauce" [(ngModel)]="this.pizza.tomate"/>
-    Base crème<input type="radio" name="sauce" [(ngModel)]="this.pizza.creme"/>
+    Base tomate <input type="radio" name="sauce" [(ngModel)]="this.pizza.sauce" value="tomate"/>
+    Base crème<input type="radio" name="sauce" [(ngModel)]="this.pizza.sauce" value="creme"/>
 
-    Anchois<input type="checkbox" [(ngModel)]="this.pizza.anchois" >
-    jambon<input type="checkbox" [(ngModel)]="this.pizza.jambon"  >
-    Miel<input type="checkbox" [(ngModel)]="this.pizza.miel" >
-    magret<input type="checkbox" [(ngModel)]="this.pizza.magret">
+    Anchois<input type="checkbox" name="anchois" [(ngModel)]="this.pizza.anchois" >
+    jambon<input type="checkbox" name="jambon" [(ngModel)]="this.pizza.jambon"  >
+    Miel<input type="checkbox" name="miel" [(ngModel)]="this.pizza.miel" >
+    magret<input type="checkbox" name="magret" [(ngModel)]="this.pizza.magret">
 
     <input type="submit" value="envoyer">
+    {{this.pizza.getprix()}}
 </form>
 
-{{this.pizza.prix()}}
