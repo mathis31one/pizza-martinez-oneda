@@ -19,6 +19,11 @@ export class PizzaFormulaireComponent implements OnInit {
   goToResume(){
     this.router.navigate(['/resume']);
   }
+
+  isValide():boolean{
+    if(this.pizza.miel ||this.pizza.jambon || this.pizza.anchois || this.pizza.magret){return true}
+    return false
+  }
 }
 
 class Pizza {
