@@ -7,7 +7,9 @@
     Miel<input type="checkbox" name="miel" [(ngModel)]="this.pizza.miel" >
     magret<input type="checkbox" name="magret" [(ngModel)]="this.pizza.magret">
 
-    <input type="submit" value="envoyer">
-    {{this.pizza.getprix()}}
+    <p>Prix : {{this.pizza.getprix()}}</p>
+
+    <input type="submit" value="envoyer" (click)="goToResume()">
+    
 </form>
 
