@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { CommandeComponentComponent } from './commande-component/commande-component.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { ResumeComponent } from './resume/resume.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ResumeComponent } from './resume/resume.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

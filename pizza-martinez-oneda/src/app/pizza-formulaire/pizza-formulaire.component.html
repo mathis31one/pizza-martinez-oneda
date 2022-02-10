@@ -1,15 +1,22 @@
-<form>
-    Base tomate <input type="radio" name="sauce" [(ngModel)]="this.pizza.sauce" value="tomate"/>
-    Base crème<input type="radio" name="sauce" [(ngModel)]="this.pizza.sauce" value="creme"/><br><br>
+<button (click)="goToAccueil()">Retour à l'accueil</button>
 
-    Anchois<input type="checkbox" name="anchois" [(ngModel)]="this.pizza.anchois" >
-    Jambon<input type="checkbox" name="jambon" [(ngModel)]="this.pizza.jambon"  >
-    Miel<input type="checkbox" name="miel" [(ngModel)]="this.pizza.miel" >
-    Magret<input type="checkbox" name="magret" [(ngModel)]="this.pizza.magret">
 
-    <p>Prix : {{this.pizza.getprix()}}</p>
+<form *ngIf="!isLoading">
+    Base tomate ( 3€ )<input type="radio" name="sauce" [(ngModel)]="this.pizza.sauce" value="tomate"/>
+    Base crème ( 4€ )<input type="radio" name="sauce" [(ngModel)]="this.pizza.sauce" value="creme"/><br><br>
 
-    <input [disabled]="!isValide()" type="submit" value="envoyer" (click)="goToResume()">
-    
+    Anchois ( 1€ )<input type="checkbox" name="anchois" [(ngModel)]="this.pizza.anchois" >
+    Jambon ( 3€ )<input type="checkbox" name="jambon" [(ngModel)]="this.pizza.jambon"  >
+    Miel ( 2€ )<input type="checkbox" name="miel" [(ngModel)]="this.pizza.miel" >
+    Magret ( 3€ )<input type="checkbox" name="magret" [(ngModel)]="this.pizza.magret">
+
+    <p>Prix : {{this.pizza.getprix()}} €</p>
+
+    <input [disabled]="!isValide()" type="submit" value="envoyer" (click)="commander()">
 </form>
+
+<div *ngIf="isLoading">
+    <h2>Chagement en cours</h2>
+    <img style="width: 30%" src="assets/pizza2.gif">
+</div>
 
